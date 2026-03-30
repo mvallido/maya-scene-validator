@@ -1,0 +1,1 @@
+# maya-asset-validator
