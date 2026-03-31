@@ -3,6 +3,7 @@ import maya.api.OpenMaya as om
 
 from cz_validation.test_cases.test_case import TestCase
 
+
 class TemplateTest(TestCase):
 
     NAME = "<Template Test>"
