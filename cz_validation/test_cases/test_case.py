@@ -103,9 +103,11 @@ class TestCase(object):
         return False
 
 
-tc = TestCase()
-s = tc.run_test()
-if not s and tc.is_select_errors_enabled():
-    tc.select_error_objs()
+if __name__ == "__main__":
+    tc = TestCase()
 
-print(tc.formatted_results())
+    success = tc.run_test()
+    if not success and tc.is_select_errors_enabled():
+        tc.select_error_objs()
+
+    print(tc.formatted_results())
