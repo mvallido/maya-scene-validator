@@ -3,6 +3,7 @@ import maya.api.OpenMaya as om
 
 from cz_validation.test_cases.test_case import TestCase
 
+
 class TemplateTest(TestCase):
 
     NAME = "<Template Test>"
@@ -34,10 +35,13 @@ class TemplateTest(TestCase):
 
 
 if __name__ == "__main__":
-    tc = TestCase()
-
+    tc = TemplateTest()
     success = tc.run_test()
-    if not success and tc.is_select_errors_enabled():
-        tc.select_error_objs()
 
     print(tc.formatted_results())
+    if not success:
+        if tc.is_select_errors_enabled():
+            tc.select_error_objs()
+
+        if tc.is_fix_errors_enabled():
+            tc.fix_errors()
