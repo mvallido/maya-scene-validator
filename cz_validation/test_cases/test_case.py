@@ -6,6 +6,7 @@ class TestCase(object):
 
     NAME = "<Test Case>"
     DESCRIPTION = "<Test Case Description>"
+    CATEGORY = "General"
 
     PASSED_TEXT = "<Test Case Passed Text>"
     FAILED_TEXT = "<Test Case Failed Test>"
@@ -74,6 +75,9 @@ class TestCase(object):
 
     def description(self):
         return self.__class__.DESCRIPTION
+
+    def category(self):
+        return self.__class__.CATEGORY
 
     def passed_text(self):
         return self.__class__.DESCRIPTION

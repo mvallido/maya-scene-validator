@@ -10,6 +10,7 @@ class DuplicateNamesTest(TestCase):
 
     NAME = "Duplicate Names"
     DESCRIPTION = "Check for duplicate node names"
+    CATEGORY = "Scene"
 
     PASSED_TEXT = "No duplicate node names"
     FAILED_TEXT = "Duplicate node names found"
