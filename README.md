@@ -1,6 +1,6 @@
 # Asset Validator
 
-![Asset Validator UI](docs/screenshot.png)
+![Asset Validator UI](docs/run_all_dialog.png)
 
 A Maya 2026 tool for automated asset validation built with PySide6. It runs a configurable suite of checks against the active scene — topology, naming conventions, transforms, and textures — and presents results in a dockable dark-themed UI. Each check reports pass/fail with selectable error nodes and, where applicable, a one-click fix. Designed as a foundation for a studio pipeline validator that a TD can extend by subclassing `TestCase`.
 
@@ -13,7 +13,7 @@ A Maya 2026 tool for automated asset validation built with PySide6. It runs a co
 
 1. Clone the repository:
    ```
-   git clone https://github.com/<your-username>/asset-validator.git
+   git clone https://github.com/mvallido/asset-validator.git
    ```
 
 2. Add the repo root to Maya's Python path. In `userSetup.py` (found in your Maya scripts directory):
@@ -73,8 +73,6 @@ The test suite mocks all Maya dependencies and runs without a Maya installation:
 ```
 python -m pytest tests/ -v
 ```
-
-64 tests across `test_case.py` base class, model checks, and pipeline checks.
 
 ## Adding a Check
 
