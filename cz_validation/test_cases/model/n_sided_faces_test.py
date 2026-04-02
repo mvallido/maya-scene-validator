@@ -7,12 +7,13 @@ from cz_validation.test_cases.test_case import TestCase
 class NSidedFacesTest(TestCase):
 
     NAME = "N-sided Faces"
-    DESCRIPTION = "Check for meshes with more than 4 edges per face"
+    DESCRIPTION = "Check for meshes with faces containing more than 4 edges"
+    CATEGORY = "Topology"
 
     PASSED_TEXT = "No n-sided faces"
     FAILED_TEXT = "N-sided faces found"
 
-    SELECT_ERRORS_ENABLED = False
+    SELECT_ERRORS_ENABLED = True
 
     def __init__(self):
         super().__init__()

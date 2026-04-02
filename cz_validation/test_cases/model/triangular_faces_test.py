@@ -7,14 +7,15 @@ from cz_validation.test_cases.test_case import TestCase
 class TriangularFacesTest(TestCase):
 
     NAME = "Triangular Faces"
-    DESCRIPTION = "Check for meshes with more than 4 edges per face"
+    DESCRIPTION = "Check for meshes with triangular faces"
+    CATEGORY = "Topology"
 
     PASSED_TEXT = "No triangular faces"
     FAILED_TEXT = "Triangular faces found"
 
     WARN_ON_FAILURE = True
 
-    SELECT_ERRORS_ENABLED = False
+    SELECT_ERRORS_ENABLED = True
 
     def __init__(self):
         super().__init__()

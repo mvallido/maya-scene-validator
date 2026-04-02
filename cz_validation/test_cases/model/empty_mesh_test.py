@@ -8,6 +8,7 @@ class EmptyMeshTest(TestCase):
 
     NAME = "Empty meshes"
     DESCRIPTION = "Check for meshes with zero vertices"
+    CATEGORY = "Meshes"
 
     PASSED_TEXT = "No empty meshes"
     FAILED_TEXT = "Empty meshes found"
