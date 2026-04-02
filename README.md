@@ -1,8 +1,8 @@
-# Asset Validator
+# Scene Validator
 
-A Maya 2026 tool for automated asset validation built with PySide6. It runs a configurable suite of checks against the active scene—topology, naming conventions, transforms, and textures—and presents results in a dockable dark-themed UI. Each check reports pass/fail with selectable error nodes and, where applicable, a one-click fix. Extensible via subclassing `TestCase`.
+![Scene Validator UI](docs/run_all_dialog.png)
 
-<img src="docs/run_all_dialog.png" width="450">
+A Maya 2026 tool for automated scene validation built with PySide6. It runs a configurable suite of checks against the active scene — topology, naming conventions, transforms, and textures — and presents results in a dark-themed UI. Checks report pass/fail with selectable error nodes and, where applicable, a one-click fix. Extensible via subclassing `TestCase`.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ A Maya 2026 tool for automated asset validation built with PySide6. It runs a co
 
 1. Clone the repository:
    ```
-   git clone https://github.com/mvallido/asset-validator.git
+   git clone https://github.com/mvallido/maya-scene-validator.git
    ```
 
 2. Add the repo root to Maya's Python path. In `userSetup.py` (found in your Maya scripts directory):

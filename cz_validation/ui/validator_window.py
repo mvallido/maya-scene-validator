@@ -39,7 +39,7 @@ class ValidatorWindow(QtWidgets.QDialog):
         if parent is None:
             parent = get_maya_window()
         super().__init__(parent)
-        self.setWindowTitle("Asset Validation")
+        self.setWindowTitle("Scene Validation")
         self.setMinimumSize(480, 520)
         self.setWindowFlag(QtCore.Qt.WindowContextHelpButtonHint, False)
         self.setStyleSheet("""
@@ -76,7 +76,7 @@ class ValidatorWindow(QtWidgets.QDialog):
         main_layout.addWidget(self._build_bottom_bar())
 
     def _build_title(self):
-        title = QtWidgets.QLabel("Model Test Suite")
+        title = QtWidgets.QLabel("Scene Validator")
         title.setAlignment(QtCore.Qt.AlignCenter)
         title.setStyleSheet("""
             background-color: #1E1E1E;
