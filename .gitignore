@@ -13,3 +13,6 @@ __pycache__/
 # Maya
 *.swatches
 *.log
+
+# Local dev launcher — machine-specific path, not for repo
+run.py
