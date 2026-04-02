@@ -4,14 +4,14 @@ import maya.api.OpenMaya as om
 from cz_validation.test_cases.test_case import TestCase
 
 
-class NSidedFacesTest(TestCase):
+class NgonTest(TestCase):
 
-    NAME = "N-sided Faces"
+    NAME = "Ngons"
     DESCRIPTION = "Check for meshes with faces containing more than 4 edges"
     CATEGORY = "Topology"
 
-    PASSED_TEXT = "No n-sided faces"
-    FAILED_TEXT = "N-sided faces found"
+    PASSED_TEXT = "No ngons found"
+    FAILED_TEXT = "Ngons found"
 
     SELECT_ERRORS_ENABLED = True
 
@@ -24,7 +24,7 @@ class NSidedFacesTest(TestCase):
             cmds.select(meshes, replace=True)
             cmds.polySelectConstraint(mode=3,  # All and next
                                       type=8,  # Only select faces
-                                      size=3)  # N-sided
+                                      size=3)  # Ngons
 
             self._errors = cmds.ls(sl=True)
 
@@ -36,7 +36,7 @@ class NSidedFacesTest(TestCase):
 
 
 if __name__ == "__main__":
-    tc = NSidedFacesTest()
+    tc = NgonTest()
     success = tc.run_test()
 
     print(tc.formatted_results())

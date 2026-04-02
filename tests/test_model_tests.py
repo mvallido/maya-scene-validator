@@ -6,7 +6,7 @@ import pytest
 from cz_validation.test_cases.model.empty_mesh_test import EmptyMeshTest
 from cz_validation.test_cases.model.duplicate_names_test import DuplicateNamesTest
 from cz_validation.test_cases.model.triangular_faces_test import TriangularFacesTest
-from cz_validation.test_cases.model.n_sided_faces_test import NSidedFacesTest
+from cz_validation.test_cases.model.ngon_test import NgonTest
 
 
 @pytest.fixture(autouse=True)
@@ -169,39 +169,39 @@ class TestTriangularFacesTest:
 
 
 # ---------------------------------------------------------------------------
-# NSidedFacesTest
+# NgonTest
 # ---------------------------------------------------------------------------
 
-class TestNSidedFacesTest:
+class TestNgonTest:
 
     def test_pass_no_meshes(self):
         sys.modules['maya.cmds'].ls.return_value = []
-        tc = NSidedFacesTest()
+        tc = NgonTest()
         assert tc.run_test() is True
         assert tc._errors == []
 
     def test_pass_no_nsided_faces(self):
         sys.modules['maya.cmds'].ls.side_effect = [["mesh1"], []]
-        tc = NSidedFacesTest()
+        tc = NgonTest()
         assert tc.run_test() is True
 
     def test_fail_has_nsided_faces(self):
         sys.modules['maya.cmds'].ls.side_effect = [["mesh1"], ["mesh1.f[10]"]]
-        tc = NSidedFacesTest()
+        tc = NgonTest()
         assert tc.run_test() is False
         assert "mesh1.f[10]" in tc._errors
 
     def test_polySelectConstraint_size_3_for_nsided(self):
         """N-sided check must use size=3, not size=1 (triangles)."""
         sys.modules['maya.cmds'].ls.side_effect = [["mesh1"], []]
-        tc = NSidedFacesTest()
+        tc = NgonTest()
         tc.run_test()
         calls = sys.modules['maya.cmds'].polySelectConstraint.call_args_list
         constraint_call = next(c for c in calls if c.kwargs.get('size') is not None)
         assert constraint_call.kwargs['size'] == 3
 
     def test_flags(self):
-        tc = NSidedFacesTest()
+        tc = NgonTest()
         assert tc.is_select_errors_enabled() is True
         assert tc.is_fix_errors_enabled() is False
         assert tc.category() == "Topology"
