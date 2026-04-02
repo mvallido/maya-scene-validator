@@ -1,8 +1,8 @@
 # Asset Validator
 
-![Asset Validator UI](docs/run_all_dialog.png)
+A Maya 2026 tool for automated asset validation built with PySide6. It runs a configurable suite of checks against the active scene—topology, naming conventions, transforms, and textures—and presents results in a dockable dark-themed UI. Each check reports pass/fail with selectable error nodes and, where applicable, a one-click fix. Extensible via subclassing `TestCase`.
 
-A Maya 2026 tool for automated asset validation built with PySide6. It runs a configurable suite of checks against the active scene — topology, naming conventions, transforms, and textures — and presents results in a dockable dark-themed UI. Each check reports pass/fail with selectable error nodes and, where applicable, a one-click fix. Designed as a foundation for a studio pipeline validator that a TD can extend by subclassing `TestCase`.
+<img src="docs/run_all_dialog.png" width="450">
 
 ## Requirements
 
